@@ -3,6 +3,9 @@ from gym import spaces
 import carla
 import numpy as np
 import cv2
+from stable_baselines3.common.env_util import make_vec_env
+
+
 
 
 class CarlaEnv(gym.Env):
@@ -95,3 +98,5 @@ class CarlaEnv(gym.Env):
         # Placeholder done condition
         return False
 
+
+env = make_vec_env(CarlaEnv, n_envs=1)  # Single environment for now

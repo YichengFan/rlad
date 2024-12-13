@@ -25,23 +25,14 @@ Action space = turn, accelerate, brake, throttle, steering angel, etc.
 reward:+ stay in lane, move forward without collisions - collisons, staying stationary too long
 
 
-Great! Let's start setting up the custom Gym environment for Carla. The Gym environment will act as an interface between the Carla simulator and the reinforcement learning algorithm. Here's the step-by-step breakdown:
-
+Gym environment for Carla>
 Key Components of the Gym Environment
-Initialization (__init__):
-
-Connect to Carla.
-Set up the vehicle, sensors, and simulation parameters.
-Reset (reset):
-
-Reset the simulation to a starting state.
-Return the initial observation (e.g., the first camera image).
-Step (step):
-
-Apply the agent's action to the car.
-Retrieve the next state, reward, and done flag.
-Return (observation, reward, done, info).
-Close (close):
-
-Clean up resources when the environment is no longer needed.
+    Initialization (__init__):
+    Set up the vehicle, sensors, and simulation parameters.
+    Reset the simulation to a starting state.
+    Return the initial observation (e.g., the first camera image).
+    Apply the agent's action to the car.
+    Retrieve the next state, reward, and done flag.
+    Return (observation, reward, done, info).
+    Clean up resources when the environment is no longer needed.
 
