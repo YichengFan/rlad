@@ -1,0 +1,47 @@
+Understand the RL model:
+Agent: The car in Carla.
+Environment: The Carla simulator.
+State: Information received from the environment (e.g., sensor data, camera images).
+Action: Decisions made by the agent (e.g., steer, throttle, brake).
+Reward: Feedback for the agent based on its actions (e.g., staying in
+
+Problem definition:
+Lane following and obstacle avoidance
+
+Environment setup: we start from camera first, maybe integrate LiDar later
+
+
+To train an RL agent, we need to:
+
+Define the state space (what the agent perceives).
+Define the action space (what the agent can do).
+Create a reward function (how the agent is evaluated).
+Wrap Carla in a format compatible with RL libraries, like OpenAI Gym.
+
+State space> input = camera feed
+
+Action space = turn, accelerate, brake, throttle, steering angel, etc.
+
+reward:+ stay in lane, move forward without collisions - collisons, staying stationary too long
+
+
+Great! Let's start setting up the custom Gym environment for Carla. The Gym environment will act as an interface between the Carla simulator and the reinforcement learning algorithm. Here's the step-by-step breakdown:
+
+Key Components of the Gym Environment
+Initialization (__init__):
+
+Connect to Carla.
+Set up the vehicle, sensors, and simulation parameters.
+Reset (reset):
+
+Reset the simulation to a starting state.
+Return the initial observation (e.g., the first camera image).
+Step (step):
+
+Apply the agent's action to the car.
+Retrieve the next state, reward, and done flag.
+Return (observation, reward, done, info).
+Close (close):
+
+Clean up resources when the environment is no longer needed.
+
