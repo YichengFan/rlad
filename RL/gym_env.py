@@ -100,3 +100,4 @@ class CarlaEnv(gym.Env):
 
 
 env = make_vec_env(CarlaEnv, n_envs=1)  # Single environment for now
+    
